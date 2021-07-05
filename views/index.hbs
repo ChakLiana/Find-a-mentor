@@ -1,0 +1,64 @@
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+      data-bs-parent="#accordionExample" style="
+    display: flex;
+    justify-content: center;">
+      <div class="accordion-body">
+        <class class="container-fluid">
+          <h3>Подбери себе ментора</h3>
+        </class>
+        <form action="/mentor/showall/serch" method="POST" class="d-flex">
+<select class="form-select" id='select' name='competencies'required aria-label="select example">
+      <option disabled selected>Поиск</option>
+            {{#each uniqueCompetencies}}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
+    </select>
+
+          <button class="btn btn-outline-success" type="submit">Найти</button>
+        </form>
+      </div>
+      </nav>
+    </div>
+  </div>
+</div>
+</div>
+<div class='card-container'>
+{{#each mentors}}
+  <div class="cardik shadow p-3 mb-5 bg-white rounded">
+    <img src="{{this.img}}" class="card-img-top"  name="avatar">
+    <div class="card-body py-0">
+      <p class="card-title">{{this.name}}</p>
+      <p class="card-text">{{this.domain}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">{{this.competencies}}</li>
+    </ul>
+    <div class="card-body py-0">
+      <a href="/mentor/{{this.id}}" class="card-link">Подробнее</a>
+    </div>
+  </div>
+{{/each}}
+</div>
+<br>
+<br>
+<div class="card-down text-center">
+  <div class="card-boddy" > 
+  <div>
+    <p class="card-text">0 занятий проведено</p>
+</div>
+    <div>
+    <p class="card-text">0 учеников обучено</p>
+</div>
+    <div>
+    <p class="card-text">Миллион людей счастливо</p>
+</div>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>
+
+
